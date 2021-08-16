@@ -47,3 +47,20 @@ export const fetchPokemonsFailure = error => {
     payload: error
   }
 }
+
+
+
+export const addPokemon = (name) => {
+    return {
+        type:"ADD_POKEMON",
+        name
+    }
+  }
+  
+export const removePokemon = (name) => {
+    return {
+        type:"REMOVE_POKEMON",
+        name
+    }
+  }
+  

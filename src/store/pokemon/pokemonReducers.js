@@ -7,7 +7,8 @@ import {
   const initialState = {
     loading: false,
     pokemons: [],
-    error: ''
+    error: '',
+    team:[]
   }
   
   const reducer = (state = initialState, action) => {
@@ -31,6 +32,16 @@ import {
           pokemons: [],
           error: action.payload
         }
+      case "ADD_POKEMON":
+            return {
+              ...state,
+              team:[...state.team,action.name]
+            }
+       case "REMOVE_POKEMON":
+            return {
+              ...state,
+              team:state.team.filter(pokemon=>pokemon!=action.name)
+            }
       default: return state
     }
   }
